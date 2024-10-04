@@ -23,8 +23,8 @@ public class BankingSystem {
 
                 switch (choice) {
                     case 1:
-                        if(accountCount>10) {
-                    	   System.out.println("더이상 계좌를 생성할 수 없습니다. 다른 번호를 선택해주세요!");
+                        if(accountCount>=10) {
+                    	   System.out.println("더이상 계좌를 생성할 수 없습니다. 최대 10개의 계좌만 생성 가능합니다!");
                     	   break;
                         }
                         System.out.print("계좌 번호를 입력하세요: ");
@@ -105,7 +105,7 @@ public class BankingSystem {
 
     // 계좌를 검색하여 반환하는 메서드
     public static Account findAccount(Account[] accounts, int accountNumber) {
-        for (Account account : accounts) {
+        for (Account account : accounts) { 
             if (account != null && account.getAccountNumber() == accountNumber) {
                 return account;
             }
